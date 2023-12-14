@@ -3,5 +3,10 @@ GCC_AARCH64_PREFIX=aarch64-linux-gnu- build -a AARCH64 -b RELEASE -t GCC -p ArmV
 ```
 
 ```
-qemu-system-aarch64 -m 2048 -cpu cortex-a57 -smp 2 -machine virt -bios Build/ArmVirtQemu-AARCH64/RELEASE_GCC/FV/QEMU_EFI.fd -device virtio-gpu-pci -device usb-ehci -device usb-kbd
+qemu-system-aarch64 -m 2048 -cpu cortex-a57 -smp 2 -machine virt -drive if=pflash,format=raw,unit=0,file=Build/ArmVirtQemu-AARCH64/RELEASE_GCC/FV/QEMU_EFI-pflash.raw,readonly=on -drive if=pflash,format=raw,unit=1,file=Build/ArmVirtQemu-AARCH64/RELEASE_GCC/FV/QEMU_VARS-pflash.raw -device virtio-gpu-pci -device usb-ehci -device usb-kbd
 ```
+
+### Refs
+
+ - https://www.kraxel.org/blog/2022/05/edk2-virt-quickstart/
+ - https://blog.51cto.com/u_16099178/8582785
