@@ -10,3 +10,5 @@ qemu-system-aarch64 -m 2048 -cpu cortex-a57 -smp 2 -machine virt -drive if=pflas
 
  - https://www.kraxel.org/blog/2022/05/edk2-virt-quickstart/
  - https://blog.51cto.com/u_16099178/8582785
+ - https://xnand.netlify.app/2019/10/03/armv8-qemu-efi-aarch64.html
+ - https://unix.stackexchange.com/a/196727/340732
